@@ -1,7 +1,7 @@
 import menu from "../assets/menu.jpg";
 import Omelette from "../assets/Omelette.jpeg";
 import sanwis from "../assets/sanwis2.jpg";
-import pay from "../assets/pay.jpg";
+import pay from "../assets/pay.jpeg";
 import Logo from "../assets/Restaurant-Logo.png";
 import cafe from "../assets/cafe.png";
 import Footer from "../footer/Footer";
@@ -101,7 +101,7 @@ function Menu() {
           </div>
           <div className="mb-8 md:mb-0">
             <img
-              className="h-[300px] w-full lg:h-[400px] lg:w-[400px] object-cover"
+              className="h-[300px] w-full md:h-[250px] lg:h-[400px] lg:w-[400px] object-cover"
               src={pay}
               alt="Omelette"
             />
@@ -164,7 +164,7 @@ function Menu() {
           </div>
           <div>
             <img
-              className="h-[300px] w-full lg:h-[400px] object-coverr"
+              className="h-[250px] md:h-[300px] w-full lg:h-[400px] object-cover"
               src={Logo}
               alt="Sanwis"
             />
@@ -349,4 +349,6 @@ export default Menu;
 //   }
   
 //   export default Menu;
+
+
 
