@@ -101,8 +101,8 @@ function Menu() {
           </div>
           <div className="mb-8 md:mb-0">
             <img
-              className="h-[300px] md:h-[250px] w-full lg:h-[400px] lg:w-[400px] object-cover"
-              src={pay}
+              className="h-[300px] w-full lg:h-[400px] lg:w-[400px] object-cover"
+              src={Omelette}
               alt="Omelette"
             />
           </div>
