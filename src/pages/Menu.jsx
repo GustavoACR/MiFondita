@@ -58,7 +58,7 @@ function Menu() {
           </div>
           <div>
             <img
-              className="h-[300px] w-full lg:h-[400px] lg:w-[400px] object-cover"
+              className="h-[300px] w-auto lg:h-[400px] lg:w-[400px] object-cover"
               src={sanwis}
               alt="Sanwis"
             />
@@ -101,7 +101,7 @@ function Menu() {
           </div>
           <div className="mb-8 md:mb-0">
             <img
-              className="h-[300px] w-full lg:h-[400px] lg:w-[400px] object-cover"
+              className="h-[300px] w-auto lg:h-[400px] lg:w-[400px] object-cover"
               src={pay}
               alt="Omelette"
             />
