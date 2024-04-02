@@ -34,11 +34,25 @@ const Pedidos = () => {
     },
   ];
 
-  // Calcula el total de ítems en el carrito
-  const totalItems = cartItems.length;
+  // // Calcula el total de ítems en el carrito
+  // const totalItems = cartItems.length;
 
-  // Calcula el precio total en el carrito sumando los precios de todos los elementos
-  const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+  // // Calcula el precio total en el carrito sumando los precios de todos los elementos
+  // const totalPrice = cartItems.reduce((total, item) => total + item.price, 0);
+
+  // Define variables para el total de ítems y el precio total
+let totalItems = 0;
+let totalPrice = 0;
+
+// Calcula el total de ítems sumando la cantidad de cada elemento en el carrito
+for (const item of cartItems) {
+  totalItems += item.quantity; // Suponiendo que cada elemento tiene una propiedad 'quantity'
+}
+
+// Calcula el precio total sumando los precios de cada elemento en el carrito
+for (const item of cartItems) {
+  totalPrice += item.price * item.quantity; // Multiplica el precio por la cantidad de cada elemento
+}
 
   const [visibleDesayunos, setVisibleDesayunos] = useState(false);
   const toggleVisibilidadDesayunos = () => {
