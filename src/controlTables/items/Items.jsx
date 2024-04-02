@@ -3,7 +3,7 @@ import DeleteEditItems from "./DeleteEditItems";
 import React, { useState, useContext } from "react";
 import Modal from "../../components/Modal";
 import { useModal } from "../../hooks/useModal";
-// import { AuthContext } from "../../context/AuthContext";
+// import { AuthContext } from "../../context/AuthContext"; este solo es un comentario
 import { Navigate } from "react-router-dom";
 import MUIDataTable from "mui-datatables";
 import dayjs from "dayjs";
