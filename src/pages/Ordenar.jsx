@@ -93,13 +93,97 @@ const Ordenar = () => {
       id: 1,
       name: "Hamburguesa",
       description: "Deliciosa hamburguesa con queso, lechuga y tomate.",
-      price: 10.99,
+      price: 50,
     },
     {
       id: 2,
       name: "Pizza",
       description: "Pizza artesanal con tus ingredientes favoritos.",
-      price: 12.99,
+      price: 50,
+    },
+    {
+      id: 3,
+      name: "Sandwich",
+      description: "Delicioso sandwiches de jamon, pollo o panela",
+      price: 50,
+    },
+  ];
+
+  const menuDesayuno = [
+    {
+      id: 1,
+      name: "Omelette",
+      description: "Omelette de huevo con tus topping favoritos",
+      price: 50,
+    },
+    {
+      id: 2,
+      name: "Toas",
+      description: "Toas dulce o salado",
+      price: 50,
+    },
+    {
+      id: 3,
+      name: "Chilaquiles",
+      description: "Deliciosis chilaquiles con tu salsa o acompañamiento preferido",
+      price: 50,
+    },
+  ];
+
+  const menuExtras = [
+    {
+      id: 1,
+      name: "Queso panela",
+      description: "",
+      price: 10,
+    },
+    {
+      id: 2,
+      name: "Aguacate",
+      description: "",
+      price: 10,
+    },
+  ];
+
+  const menuSnacks = [
+    {
+      id: 1,
+      name: "Yogurt griego con frutas",
+      description: "",
+      price: 50,
+    },
+    {
+      id: 2,
+      name: "Galletas surtidas",
+      description: "",
+      price: 50,
+    },
+    {
+      id: 3,
+      name: "Pay de queso",
+      description: "",
+      price: 50,
+    },
+  ];
+
+  const menuBebidas = [
+    {
+      id: 1,
+      name: "Cafe americano",
+      description: "",
+      price: 50,
+    },
+    {
+      id: 2,
+      name: "Jugos naturales",
+      description: "",
+      price: 50,
+    },
+    {
+      id: 3,
+      name: "Refrescos",
+      description: "",
+      price: 50,
     },
   ];
 
@@ -136,6 +220,11 @@ const Ordenar = () => {
   const [visibleComidas, setVisibleComidas] = useState(false);
   const toggleVisibilidadComidas = () => {
     setVisibleComidas(!visibleComidas);
+  };
+
+  const [visibleExtras, setVisibleExtras] = useState(false);
+  const toggleVisibilidadExtras = () => {
+    setVisibleExtras(!visibleExtras);
   };
 
   const [visibleSnacks, setVisibleSnacks] = useState(false);
@@ -196,6 +285,13 @@ const Ordenar = () => {
         </button>
         {visibleDesayunos && (
           <div className="bg-white flex flex-col sm:flex-row items-center justify-center">
+            {menuDesayuno.map((item) => (
+              <MenuItem key={item.id} item={item} onAddToCart={handleAddToCart} />
+            ))}
+          </div>
+        )}
+        {/* {visibleDesayunos && (
+          <div className="bg-white flex flex-col sm:flex-row items-center justify-center">
             {isFetchingDesayunos ? (
               <CircularProgress />
             ) : (
@@ -213,7 +309,7 @@ const Ordenar = () => {
               ))
             )}
           </div>
-        )}
+        )} */}
       </div>
 
       <div>
@@ -226,8 +322,26 @@ const Ordenar = () => {
         )}
         </button>
         {visibleComidas && (
-          <div>
+          <div className="bg-white flex flex-col sm:flex-row items-center justify-center">
             {menuComida.map((item) => (
+              <MenuItem key={item.id} item={item} onAddToCart={handleAddToCart} />
+            ))}
+          </div>
+        )}
+      </div>
+
+      <div>
+        <button onClick={toggleVisibilidadExtras} className="bg-white w-full sm:text-5xl text-3xl font-bold font-truculenta py-2 rounded-md sm:hover:text-[50px] hover:text-[35px] active:translate-y-1 text-center flex items-center justify-center">
+        Extras
+        {visibleExtras ? (
+          <TfiAngleUp className="ml-5 text-3xl"/>
+        ) : (
+          <TfiAngleDown className="ml-5 text-3xl"/>
+        )}
+        </button>
+        {visibleExtras && (
+          <div className="bg-white flex flex-col sm:flex-row items-center justify-center">
+            {menuExtras.map((item) => (
               <MenuItem key={item.id} item={item} onAddToCart={handleAddToCart} />
             ))}
           </div>
@@ -244,8 +358,8 @@ const Ordenar = () => {
         )}
         </button>
         {visibleSnacks && (
-          <div>
-            {menuComida.map((item) => (
+          <div className="bg-white flex flex-col sm:flex-row items-center justify-center">
+            {menuSnacks.map((item) => (
               <MenuItem key={item.id} item={item} onAddToCart={handleAddToCart} />
             ))}
           </div>
@@ -262,8 +376,8 @@ const Ordenar = () => {
         )}
         </button>
         {visibleBebidas && (
-          <div>
-            {menuComida.map((item) => (
+          <div className="bg-white flex flex-col sm:flex-row items-center justify-center">
+            {menuBebidas.map((item) => (
               <MenuItem key={item.id} item={item} onAddToCart={handleAddToCart} />
             ))}
           </div>
@@ -373,3 +487,4 @@ const Ordenar = () => {
 };
 
 export default Ordenar;
+
