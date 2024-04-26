@@ -15,7 +15,7 @@ const MenuItem = ({ item, onAddToCart }) => {
   };
 
   return (
-    <Card>
+    <Card className="my-2 mx-2">
       <CardContent>
         {/* <Typography variant="h5" component="h2" className="font-aronesans">
           {item.name}
